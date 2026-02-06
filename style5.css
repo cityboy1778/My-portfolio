@@ -46,6 +46,77 @@ body {
     opacity: 1;
 }
 
+/* HAMBURGER MENU */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #111;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    animation: slideDown 0.3s ease;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-menu a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #111;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+.mobile-menu a:hover {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
 /* ------------ CONTACT SECTION ------------ */
 .contact {
     display: grid;
@@ -170,8 +241,102 @@ body {
     transform: translateY(-2px);
 }
 
+/* FOOTER */
+.footer {
+    background-color: #111;
+    color: #aaa;
+    padding: 60px 6% 0;
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-section a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    font-size: 0.85rem;
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
 /* ------------ RESPONSIVE ------------ */
 @media (max-width: 900px) {
+    /* HAMBURGER VISIBLE */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
     .contact {
         grid-template-columns: 1fr;
         padding: 100px 5%;
@@ -183,5 +348,64 @@ body {
 
     .contact-title {
         font-size: 2.4rem;
+    }
+
+    .footer {
+        padding: 50px 5% 0;
+    }
+
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav {
+        padding: 15px 4%;
+    }
+
+    .contact {
+        padding: 80px 4%;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-text {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .contact-right {
+        padding: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px 12px;
+    }
+
+    .submit-btn {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+
+    .footer-content {
+        gap: 25px;
+    }
+
+    .footer {
+        padding: 40px 4% 0;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 }

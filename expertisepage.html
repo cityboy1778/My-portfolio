@@ -11,15 +11,24 @@
 <body>
 
     <!-- NAVBAR -->
-    <header>
-        <nav class="nav">
-            <div class="logo" aria-label="Pelumi Killa Logo"></div>
-            <ul class="nav-links">
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="workpage.html">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <header class="nav-header">
+        <div class="logo">OLUWAPELUMI</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="workpage.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="workpage.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -98,9 +107,37 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Pelumi Killa. All rights reserved.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Oluwapelumi</h3>
+                <p>Creative Full-Stack Engineer crafting digital experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="workpage.html">Work</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="https://github.com/cityboy1778">GitHub</a>
+                <a href="https://x.com/PelumiKill17508">X (Twitter)</a>
+                <a href="https://www.instagram.com/techwithpelumi/">Instagram</a>
+                <a href="https://www.linkedin.com/in/oluwapelumi-killa-7692a8295">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Oluwapelumi Immanuel. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
